@@ -4,3 +4,9 @@
 PORT=""
 REDIS_URI=""
 ```
+
+### start project
+
+```
+docker compose up
+```
