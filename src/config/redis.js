@@ -1,7 +1,6 @@
-import { createClient } from 'redis';
+import redis from "redis";
 
-import logger from '../utils/logger.js';
-
-export default await createClient()
-  .on('error', (err) => logger.error('redis error' + err.message))
+export default await redis
+  .createClient({ url: process.env.REDIS_URI })
+  .on("error", (err) => console.error(err))
   .connect();
